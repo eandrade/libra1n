@@ -11,7 +11,6 @@ namespace openra1n
 	{
 		static MobileDevice iDev = new MobileDevice(0x1222, MobileDevice.Verbrosity.Debug);
 
-		int i, ret;
 		byte data = 0x800;
 		string spyld = @"steaks4uce_pyld.bin";
 		string pyld = @"payload.bin";
@@ -23,7 +22,7 @@ namespace openra1n
 		static Array.Copy memcpy = new Array.Copy();
 
 		
-		public steaks4uce_exploit()
+		public steaks4uce()
 		{
 			iDev.Connect();
 			
@@ -57,8 +56,9 @@ namespace openra1n
 			
 			Console.Write("Reseting .....");
 			iDev.reset();
+			
+			return 0;
 			}
 
 		}
 	}
-}
