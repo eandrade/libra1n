@@ -32,7 +32,7 @@ namespace Alpine.Device
         private DeviceMode mMode = DeviceMode.Recovery;
         public Verbrosity mType = Verbrosity.Errors;
         private UsbDevice mDevice;
-
+		
         public MobileDevice(int mode, Verbrosity flags)
         {
             mMode = (DeviceMode)mode;
@@ -79,6 +79,20 @@ namespace Alpine.Device
                 //write debug "CLOSING"
                 if (mDevice.Close())
                 {
+					//write debug "OK"
+                }
+            }
+        }
+		
+        public void reset()
+        {
+            if (mDevice.IsOpen)
+            {
+                //write debug "CLOSING"
+                if (mDevice.Close())
+                {
+					  mDevice.Open();
+
                     //write debug "OK"
                 }
             }
