@@ -1,0 +1,21 @@
+
+using System;
+using Alpine.Device;
+
+
+namespace openra1n
+{
+		public class steaks4uce
+	{
+		static MobileDevice iDev = new MobileDevice(0x1222, MobileDevice.Verbrosity.Debug);
+
+		public static byte[] data; 
+		
+		public steaks4uce()
+		{
+				iDev.Connect();
+				iDev.SendRaw(0x21, 4, 0, 0, data, 1000);
+
+		}
+	}
+}
