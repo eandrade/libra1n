@@ -6,8 +6,6 @@ using System.Management;
 
 using Alpine.Device;
 
-using Manzana;
-
 namespace openra1n
 {
 		public class limera1n
@@ -24,7 +22,7 @@ namespace openra1n
 	uint shellcode_length = 0;		
 	string cpid = "";
 		
-			ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PnPDevice");
+		ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_PnPDevice");
 
 		
 		
